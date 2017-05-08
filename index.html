@@ -1,10 +1,17 @@
-<style type="text/css">html * {
+<link href='//fonts.googleapis.com/css?family=Comic Sans MS' rel='stylesheet'>
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="apple-touch-startup-image" href="launch.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Ed, Edd 'n Eddy: Jujubes!">
+<meta name="apple-mobile-web-status-bar-style" content="white">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">html, body {
   overflow-x: hidden;
   overflow-y: hidden;
-  font-family: "Comic Sans MS"
-}
-body {
-  position: relative
+  overflow: hidden;
+  height: 100%;
+  font-family: 'Comic Sans MS';
 }
 .center {
     margin: auto;
@@ -12,21 +19,40 @@ body {
     border: 3px solid green;
     padding: 10px;
 }
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
 </style>
 
-<link rel="apple-touch-icon" href="icon.png">
-<link rel="apple-touch-startup-image" href="launch.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="javascript">
+var fixed = document.getElementById('fixed');
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+fixed.addEventListener('touchmove', function(e) {
+
+        e.preventDefault();
+
+}, false);
+</script>
+
+<body onclick='window.location.href="http://google.com"'>
 
 <title>Ed, Edd 'n Eddy: Jujubes!</title>
 
-<center><p/><p/><p/><p/><p/><p/>Ed, Edd 'n Eddy: Jujubes!
+<center><p/><p/><p/><p/><p/><p class="noselect">Ed, Edd 'n Eddy: Jujubes!</p>
 <p/><p/><p/><p/><p/><p/><img src="title.png">
-<p/><p/><p/><p/>Tap Anywhere
+<p/><p/><p/><p class="noselect">Tap Anywhere</p>
 </center>
 
 <audio autoplay loop>
       <source src="bgm1.mp3">
 </audio>
+
+<!-- COMMENT REFERENCE -->
+
+</body>
