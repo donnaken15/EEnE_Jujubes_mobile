@@ -6,92 +6,24 @@
 <meta name="apple-mobile-web-status-bar-style" content="white">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<style type="text/css">html, body {
-  overflow-x: hidden;
-  overflow-y: hidden;
-  overflow: hidden;
-  height: 100%;
-  font-family: "Arial";
-}
-.center {
-    margin: auto;
-    width: 50%;
-    border: 3px solid green;
+<style type="text/css">html, body, .container {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	overflow: hidden;
+	height: 100%;
+	font-family: "Arial";
+	margin: auto;
+	width: 50%;
+	height: 50%;
+	top: 50%;
+    left: 50%;
     padding: 10px;
 }
 </style>
 
-<script type="javascript">
-var fixed = document.getElementById('fixed');
+<body onclick='window.location.href="menu.html"' class="center">
 
-fixed.addEventListener('touchmove', function(e) {
-
-        e.preventDefault();
-
-}, false);
-
-document.ontouchmove = function(event){
-    event.preventDefault();
-}
-
-window.blockMenuHeaderScroll = false;
-$(window).on('touchstart', function(e)
-{
-    if ($(e.target).closest('#mobileMenuHeader').length == 1)
-    {
-        blockMenuHeaderScroll = true;
-    }
-});
-$(window).on('touchend', function()
-{
-    blockMenuHeaderScroll = false;
-});
-$(window).on('touchmove', function(e)
-{
-    if (blockMenuHeaderScroll)
-    {
-        e.preventDefault();
-    }
-});
-
-var freezeVp = function(e) {
-    e.preventDefault();
-};
-
-var vpH = window.innerHeight;
-document.documentElement.style.height = vpH.toString() + "px";
-body.style.height = vpH.toString() + "px";
-
-function stopBodyScrolling (bool) {
-    if (bool === true) {
-        document.body.addEventListener("touchmove", freezeVp, false);
-    } else {
-        document.body.removeEventListener("touchmove", freezeVp, false);
-    }
-}
-
-$(function() {
-    // Check if it is iOS
-    var isiOS = (navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false);
-    
-    if(isiOS === true) {
-    
-        // Store -webkit-tap-highlight-color as this gets set to rgba(0, 0, 0, 0) in the next part of the code
-        var tempCSS = $('a').css('-webkit-tap-highlight-color');
-        
-        $('body').css('cursor', 'pointer')                                    // Make iOS honour the click event on body
-                 .css('-webkit-tap-highlight-color', 'rgba(0, 0, 0, 0)');     // Stops content flashing when body is clicked
-             
-        // Re-apply cached CSS
-        $('a').css('-webkit-tap-highlight-color', tempCSS);
-    
-    }
-});
-
-stopBodyScrolling(true);
-</script>
-
-<body onclick='window.location.href="menu.html"'>
+<div>
 
 <title>Ed, Edd 'n Eddy: Jujubes!</title>
 
@@ -100,10 +32,12 @@ stopBodyScrolling(true);
 <p/><p/><p/><p class="noselect">Tap Anywhere</p>
 </center>
 
-<audio autoplay loop autobuffer>
+<!-- <audio autoplay loop autobuffer>
       <source src="bgm1.mp3">
 </audio>
 
 <!-- COMMENT REFERENCE -->
+
+</div>
 
 </body>
