@@ -88,6 +88,10 @@ function update()
     }
 }
 setInterval(update,1000);
+
+document.ontouchmove = function (e) {
+  e.preventDefault();
+}
 </script>
 
 <body onclick='window.location.href="menu.html"'>
