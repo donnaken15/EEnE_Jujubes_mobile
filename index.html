@@ -89,8 +89,8 @@ function update()
 }
 setInterval(update,1000);
 
-document.ontouchmove = function (e) {
-  e.preventDefault();
+document.ontouchmove = function(event){
+    event.preventDefault();
 }
 </script>
 
