@@ -11,7 +11,7 @@
   overflow-y: hidden;
   overflow: hidden;
   height: 100%;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS", "Comic Sans", 'Marker Felt', sans-serif;;
 }
 .center {
     margin: auto;
@@ -112,6 +112,24 @@ $(window).on('touchmove', function(e)
         e.preventDefault();
     }
 });
+
+var freezeVp = function(e) {
+    e.preventDefault();
+};
+
+var vpH = window.innerHeight;
+document.documentElement.style.height = vpH.toString() + "px";
+body.style.height = vpH.toString() + "px";
+
+function stopBodyScrolling (bool) {
+    if (bool === true) {
+        document.body.addEventListener("touchmove", freezeVp, false);
+    } else {
+        document.body.removeEventListener("touchmove", freezeVp, false);
+    }
+}
+
+stopBodyScrolling(true);
 </script>
 
 <body onclick='window.location.href="menu.html"'>
