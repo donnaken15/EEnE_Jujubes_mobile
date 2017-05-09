@@ -17,19 +17,33 @@
     justify-content: center;
 	font-family: "Comic Sans MS", "Comic Sans", "Arial";
 }
-a {
-	text-decoration : none; color : #000;
-	text-align: left;
-}
 </style>
 
-<body class="center">
+<script>
+
+var updateLayout = function() {
+  if (window.innerWidth != currentWidth) {
+    currentWidth = window.innerWidth;
+    var orient = (currentWidth == 320) ? "profile" : "landscape";
+    document.body.setAttribute("orient", orient);
+    window.scrollTo(0, 1);
+  }
+};
+
+iPhone.DomLoad(updateLayout);
+setInterval(updateLayout, 500);
+
+</script>
+
+<body onclick='window.location.href="menu.html"' class="center">
+
+<div>
 
 <title>Ed, Edd 'n Eddy: Jujubes!</title>
 
-<center><p> </p><p> </p><p> </p><p> </p><p> </p><p class="noselect" class="comic">Ed, Edd 'n Eddy: Jujubes!</p>
-<p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><img src="title.png">
-<p> </p><p> </p><p> </p><p> </p><a onclick='window.location.href="menu.html"' style="text-decoration:none">New</a><p> </p><a href="hub.html" style="text-decoration:none">Continue</a><p> </p><a href="#" onclick="self.window.close();return false;" style="text-decoration:none">Quit</a>
+<center><p/><p/><p/><p/><p/><p class="noselect" class="comic">Ed, Edd 'n Eddy: Jujubes!</p>
+<p/><p/><p/><p/><p/><p/><img src="title.png">
+<p/><p/><p/><p class="noselect">Tap Anywhere</p>
 </center>
 
 <audio autoplay loop autobuffer>
@@ -37,5 +51,7 @@ a {
 </audio>
 
 <!-- COMMENT REFERENCE -->
+
+</div>
 
 </body>
