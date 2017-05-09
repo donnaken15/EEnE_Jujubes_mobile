@@ -20,19 +20,12 @@
 </style>
 
 <script>
-
-var updateLayout = function() {
-  if (window.innerWidth != currentWidth) {
-    currentWidth = window.innerWidth;
-    var orient = (currentWidth == 320) ? "profile" : "landscape";
-    document.body.setAttribute("orient", orient);
-    window.scrollTo(0, 1);
-  }
-};
-
-iPhone.DomLoad(updateLayout);
-setInterval(updateLayout, 500);
-
+if (
+    ("standalone" in window.navigator) &&       // Check if "standalone" property exists
+    !window.navigator.standalone                // Test if using standalone navigator
+    ){
+	alert("You can access this game easier by adding this page to home screen.")
+}
 </script>
 
 <body onclick='window.location.href="menu.html"' class="center">
@@ -41,7 +34,7 @@ setInterval(updateLayout, 500);
 
 <title>Ed, Edd 'n Eddy: Jujubes!</title>
 
-<center><p/><p/><p/><p/><p/><p class="noselect" class="comic">Ed, Edd 'n Eddy: Jujubes!</p>
+<center><p/><p/><p/><p/><p/><p class="noselect">Ed, Edd 'n Eddy: Jujubes!</p>
 <p/><p/><p/><p/><p/><p/><img src="title.png">
 <p/><p/><p/><p class="noselect">Tap Anywhere</p>
 </center>
