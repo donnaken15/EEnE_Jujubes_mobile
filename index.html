@@ -17,17 +17,19 @@
     justify-content: center;
 	font-family: "Comic Sans MS", "Comic Sans", "Arial";
 }
+a {
+	text-decoration : none; color : #000;
+	text-align: left;
+}
 </style>
 
-<body onclick='window.location.href="menu.html"' class="center">
-
-<div>
+<body class="center">
 
 <title>Ed, Edd 'n Eddy: Jujubes!</title>
 
-<center><p/><p/><p/><p/><p/><p class="noselect" class="comic">Ed, Edd 'n Eddy: Jujubes!</p>
-<p/><p/><p/><p/><p/><p/><img src="title.png">
-<p/><p/><p/><p class="noselect">Tap Anywhere</p>
+<center><p> </p><p> </p><p> </p><p> </p><p> </p><p class="noselect" class="comic">Ed, Edd 'n Eddy: Jujubes!</p>
+<p> </p><p> </p><p> </p><p> </p><p> </p><p> </p><img src="title.png">
+<p> </p><p> </p><p> </p><p> </p><a onclick='window.location.href="menu.html"' style="text-decoration:none">New</a><p> </p><a href="hub.html" style="text-decoration:none">Continue</a><p> </p><a href="#" onclick="self.close();return false;" style="text-decoration:none">Quit</a>
 </center>
 
 <audio autoplay loop autobuffer>
@@ -35,7 +37,5 @@
 </audio>
 
 <!-- COMMENT REFERENCE -->
-
-</div>
 
 </body>
