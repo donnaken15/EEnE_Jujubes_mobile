@@ -1,9 +1,9 @@
 <link rel="apple-touch-icon" href="icon.png">
-<link rel="apple-touch-startup-image" href="launch.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Ed, Edd 'n Eddy: Jujubes!">
 <meta name="apple-mobile-web-status-bar-style" content="white">
-<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, height=device-height,
+             initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 <style type="text/css">html, body {
 	overflow-x: hidden;
@@ -11,7 +11,6 @@
 	overflow: hidden;
 	height: 100%;
 	width: 100%;
-	font-family: "Arial";
 	display: flex;
     align-items: center;
     justify-content: center;
@@ -20,28 +19,19 @@
 </style>
 
 <script>
-
-var updateLayout = function() {
-  if (window.innerWidth != currentWidth) {
-    currentWidth = window.innerWidth;
-    var orient = (currentWidth == 320) ? "profile" : "landscape";
-    document.body.setAttribute("orient", orient);
-    window.scrollTo(0, 1);
-  }
-};
-
-iPhone.DomLoad(updateLayout);
-setInterval(updateLayout, 500);
-
+if (
+    ("standalone" in window.navigator) &&
+    !window.navigator.standalone
+    ){
+	alert("You can access this game easier by adding this page to home screen.")
+}
 </script>
 
 <body onclick='window.location.href="menu.html"' class="center">
 
-<div>
-
 <title>Ed, Edd 'n Eddy: Jujubes!</title>
 
-<center><p/><p/><p/><p/><p/><p class="noselect" class="comic">Ed, Edd 'n Eddy: Jujubes!</p>
+<center><p/><p/><p/><p/><p/><p class="noselect">Ed, Edd 'n Eddy: Jujubes!</p>
 <p/><p/><p/><p/><p/><p/><img src="title.png">
 <p/><p/><p/><p class="noselect">Tap Anywhere</p>
 </center>
@@ -51,7 +41,5 @@ setInterval(updateLayout, 500);
 </audio>
 
 <!-- COMMENT REFERENCE -->
-
-</div>
 
 </body>
